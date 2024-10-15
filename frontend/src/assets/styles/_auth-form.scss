@@ -1,0 +1,170 @@
+@import "variables";
+@import "mixins";
+
+.auth-form {
+  margin-top: 120px;
+  margin-bottom: 120px;
+
+  .auth-title {
+    @include head-lora-36;
+    margin-bottom: 40px;
+  }
+
+  .auth-inputs {
+    margin-bottom: 40px;
+
+    .auth-input {
+      margin-bottom: 5px;
+
+      input {
+        width: 422px;
+
+        &::placeholder {
+          color: #A8ABA7;
+        }
+      }
+
+      .notice {
+        color: red;
+        margin-top: 1px;
+        width: 422px;
+        font-size: 12px;
+      }
+    }
+
+    .auth-input-password {
+      position: relative;
+
+      svg {
+        width: 25px;
+        position: absolute;
+        right: 25px;
+        top: 15px;
+        cursor: pointer;
+      }
+    }
+
+    .auth-checkbox {
+      margin-top: 10px;
+      max-width: 422px;
+      display: flex;
+      align-items: baseline;
+
+      input {
+        margin: 0;
+      }
+
+      label {
+        font-size: 14px;
+        line-height: 130%;
+        margin-left: 10px;
+        color: $base-text-color;
+
+        a {
+          color: $blue-text-color;
+        }
+      }
+    }
+  }
+
+  .auth-button {
+    margin-top: 40px;
+
+    button.button {
+      width: 422px;
+    }
+  }
+
+  .auth-link {
+    margin-top: 10px;
+    font-size: 14px;
+    color: $base-text-color;
+
+    a {
+      text-decoration: none;
+      margin-left: 7px;
+      color: $blue-text-color;
+    }
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 490px) {
+  .auth-form {
+    .auth-title {
+      font-size: 30px;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .auth-form {
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+    .auth-title {
+      font-size: 28px;
+    }
+
+    .auth-inputs {
+      .auth-input {
+        input {
+          width: 300px;
+        }
+
+        .notice {
+          width: 300px;
+        }
+      }
+
+      .auth-checkbox {
+        max-width: 300px;
+      }
+
+      .auth-input-password {
+
+        svg {
+          right: 45px;
+        }
+      }
+    }
+
+    .auth-button {
+      margin-top: 30px;
+
+      button.button {
+        width: 300px;
+      }
+    }
+
+    .auth-link {
+      font-size: 12px;
+    }
+  }
+}
+@media screen and (max-width: 380px) {
+  .auth-form {
+    .auth-inputs {
+      .auth-input-password {
+        svg {
+          right: 45px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 340px) {
+  .auth-form {
+    .auth-inputs {
+      .auth-input-password {
+        svg {
+          right: 25px;
+        }
+      }
+    }
+  }
+}
+

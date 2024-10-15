@@ -1,0 +1,57 @@
+@import "variables";
+
+@mixin head-lora-36 {
+  font-family: 'Lora', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  color: $blue-text-color;
+}
+
+
+@mixin head-lora-38 {
+  font-family: 'Lora', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  color: $blue-text-color;
+}
+
+@mixin card-image {
+  width: 291px;
+  height: 291px;
+  border-radius: 5px;
+  background-size: cover;
+  background-position: center;
+}
+
+@mixin card-title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 26px;
+  color: $blue-text-color;
+}
+
+@mixin card-description {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: $base-text-color;
+}
+
+@mixin carousel-arrow {
+  display: flex;
+  position: absolute;
+  top: calc(50% - 5px);
+  cursor: pointer;
+  z-index: 5;
+}
+
+@mixin popup-close {
+  position: absolute;
+  cursor: pointer;
+  top: 30px;
+  right: 30px;
+}

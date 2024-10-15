@@ -1,0 +1,71 @@
+@import "../../../../assets/styles/auth-form";
+
+.signup {
+   .container {
+    display: flex;
+
+    .page-image {
+      margin-left: 185px;
+
+      img {
+        margin-top: 123px;
+        vertical-align: center;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (max-width: 1270px) {
+  .signup .container {
+    justify-content: center;
+    padding: 0 30px;
+
+    .page-image {
+      margin-left: 100px;
+
+      img {
+        width: 500px;
+        margin-top: 136px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 1190px) {
+  .signup .container {
+    .page-image {
+      margin-left: 80px;
+
+      img {
+        width: 400px;
+        margin-top: 166px;
+
+      }
+    }
+  }
+}
+@media screen and (max-width: 970px) {
+  .signup .container {
+    .page-image {
+      margin-left: 50px;
+
+      img {
+        width: 380px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 920px) {
+  .signup .container {
+    .page-image {
+      display: none;
+    }
+  }
+}
+@media screen and (max-width: 395px) {
+  .signup .container {
+    padding: 0 10px;
+  }
+}

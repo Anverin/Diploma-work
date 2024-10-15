@@ -1,0 +1,49 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.agreement {
+  .container {
+    margin-bottom: 120px;
+
+    .agreement-title {
+      @include head-lora-38;
+      margin-bottom: 40px;
+      margin-top: 70px;
+
+      &:first-child {
+        margin-top: 40px;
+      }
+    }
+
+    .agreement-text-part-title {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 20px;
+      line-height: 26px;
+      color: $blue-text-color;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    .agreement-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 18.2px;
+    }
+
+    ul {
+      list-style: none;
+      margin-left: -20px;
+
+      li {
+        margin-bottom: 5px;
+
+        span {
+          color: $blue-text-color;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+}

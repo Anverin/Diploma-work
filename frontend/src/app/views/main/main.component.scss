@@ -1,0 +1,865 @@
+@import "../../../assets/styles/variables";
+@import "../../../assets/styles/mixins";
+@import "../../../assets/styles/popup";
+
+.main {
+  margin-bottom: 120px;
+
+  .container {
+    .banner-carousel {
+      position: relative;
+
+      .banner-carousel-arrows {
+        display: flex;
+
+        a {
+          @include carousel-arrow;
+
+          &.move-backward {
+            left: 12px;
+          }
+
+          &.move-forward {
+            right: 12px;
+          }
+        }
+      }
+
+      .banner-carousel-button {
+        width: 163px;
+        position: absolute;
+        left: 80px;
+        bottom: 99px;
+        z-index: 5;
+      }
+
+      .banner-text {
+        position: absolute;
+        top: 86px;
+        left: 80px;
+        width: 610px;
+
+        .banner-text-tag {
+          text-transform: uppercase;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 12px;
+          font-weight: 600;
+          letter-spacing: 0.4em;
+          color: $blue-text-color;
+          margin-bottom: 3px;
+        }
+
+        .banner-text-title {
+          font-family: 'Lora', sans-serif;
+          font-size: 50px;
+          font-weight: 400;
+          line-height: 65px;
+          color: white;
+          margin-bottom: 19px;
+
+          span {
+            color: $blue-text-color;
+          }
+        }
+
+        .banner-text-small {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 24px;
+          font-weight: 400;
+          line-height: 31.2px;
+          color: white;
+          width: 456px;
+        }
+      }
+
+      .banner-text-first {
+        top: 100px;
+      }
+    }
+  }
+}
+
+.popular-articles {
+  .container {
+    position: relative;
+    padding-bottom: 40px;
+    margin-bottom: 120px;
+
+    .popular-articles-header {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .popular-article-cards {
+      margin-bottom: 40px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 25px;
+    }
+
+    .popular-articles-button {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        display: flex;
+        align-items: center;
+
+        span {
+          margin-right: 19px;
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: $blue-text-color;
+        }
+      }
+    }
+  }
+}
+
+.services {
+  margin-bottom: 120px;
+
+  .container {
+    .services-header {
+      @include head-lora-38;
+      margin-bottom: 40px;
+    }
+
+    .services-cards {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      column-gap: 27px;
+
+      .services-card {
+        width: 290px;
+        height: 498px;
+        position: relative;
+
+        .services-card-image {
+          @include card-image;
+          margin-bottom: 15px;
+        }
+
+        .services-card-title {
+          @include card-title;
+          margin-bottom: 10px;
+        }
+
+        .services-card-description {
+          @include card-description;
+          margin-bottom: 15px;
+        }
+
+        .services-card-bottom {
+          display: flex;
+          align-items: center;
+          position: absolute;
+          bottom: 0;
+
+          .services-card-price {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 20px;
+            color: $blue-text-color;
+            margin-right: 21px;
+          }
+
+          .services-card-button {
+            width: 163px;
+          }
+        }
+      }
+    }
+  }
+}
+
+.about {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+
+    .about-image img {
+      width: 460px;
+      border-radius: 5px;
+    }
+
+    .about-text {
+      width: 715px;
+
+      .about-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .about-description {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 18.2px;
+        text-align: left;
+        margin-bottom: 40px;
+        width: 633px;
+        color: $dark-text-color;
+
+        span {
+          font-weight: 500;
+        }
+      }
+
+      .about-advantages {
+        .about-advantages-title {
+          font-family: 'Lora', sans-serif;
+          font-weight: 400;
+          font-size: 26px;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .about-advantages-items {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          grid-template-areas:
+              "advantage-1 advantage-2"
+              "advantage-3 advantage-4";
+
+          .advantage-1 {
+            grid-area: advantage-1;
+          }
+
+          .advantage-2 {
+            grid-area: advantage-2;
+          }
+
+          .advantage-3 {
+            grid-area: advantage-3;
+          }
+
+          .advantage-4 {
+            grid-area: advantage-4;
+          }
+
+
+          .about-advantages-item {
+            display: flex;
+            margin-bottom: 20px;
+
+            .about-advantages-item-number {
+              position: relative;
+              width: 40px;
+              margin-right: 20px;
+
+              .about-advantages-item-circle {
+                display: block;
+                border-radius: 50%;
+                width: 40px;
+                height: 40px;
+                background: #B9D5FD;
+                position: absolute;
+                left: 0;
+                top: 32px;
+                z-index: 2;
+              }
+
+              .about-advantages-item-figure {
+                font-family: 'Lora', sans-serif;
+                font-size: 50px;
+                font-weight: 500;
+                line-height: 65px;
+                color: $blue-text-color;
+                position: absolute;
+                left: 8px;
+                top: 13px;
+                z-index: 3;
+              }
+            }
+
+            .about-advantages-item-description {
+              font-family: 'Montserrat', sans-serif;
+              font-weight: 400;
+              font-size: 14px;
+              line-height: 18.2px;
+              text-align: left;
+              color: $dark-text-color;
+              width: 256px;
+
+              span {
+                font-weight: 500;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.reviews {
+  margin-bottom: 120px;
+
+  .container {
+    .reviews-title {
+      @include head-lora-38;
+      margin-bottom: 20px;
+    }
+
+    .reviews-carousel {
+      position: relative;
+
+      .reviews-carousel-arrows {
+        display: flex;
+
+        a {
+          @include carousel-arrow;
+
+          &.move-backward {
+            left: -41px;
+          }
+
+          &.move-forward {
+            right: -41px;
+          }
+        }
+      }
+
+      .review-item {
+        width: 396px;
+        height: 267px;
+        padding: 30px;
+        border: 2px solid $blue-text-color;
+        border-radius: 5px;
+        box-sizing: border-box;
+
+        .review-item-head {
+          display: flex;
+          align-items: center;
+          margin-bottom: 15px;
+
+          .review-item-image {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-position: center;
+            background-size: cover;
+            margin-right: 26px;
+          }
+
+          .review-item-name {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 18px;
+            color: $blue-text-color;
+          }
+        }
+
+        .review-item-text {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 16px;
+          font-weight: 400;
+          line-height: 22.4px;
+          color: $base-text-color;
+        }
+      }
+    }
+  }
+}
+
+.contacts {
+  margin-bottom: 120px;
+
+  .container {
+    display: flex;
+
+    .map iframe {
+      vertical-align: bottom;
+      width: 607px;
+      margin-right: 26px;
+    }
+
+    .contacts-list {
+      .contacts-list-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .contacts-list-item {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+
+        .contacts-list-item-head {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 500;
+          font-size: 20px;
+          color: $blue-text-color;
+          margin-bottom: 10px;
+        }
+
+        .contacts-list-item-text {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 400;
+          font-size: 14px;
+          color: $base-text-color;
+          width: 501px;
+
+          & a {
+            text-decoration: none;
+            color: $base-text-color;
+          }
+        }
+
+        .contacts-list-item-icons {
+          display: flex;
+
+          & a {
+            margin-right: 20px;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 1270px) {
+  .popular-articles {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .popular-article-cards {
+        justify-content: center;
+        grid-template-columns: repeat(3, 291px);
+        column-gap: 35px;
+
+        article-card:last-child {
+          display: none;
+        }
+      }
+
+      .popular-articles-button {
+        right: 10px;
+      }
+    }
+  }
+
+  .services {
+    .container {
+      .services-header {
+        padding-left: 10px;
+      }
+
+      .services-cards {
+        justify-content: center;
+        display: grid;
+        grid-template-columns: repeat(2, 291px);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 80px;
+        row-gap: 80px;
+      }
+    }
+  }
+
+  .about {
+    .container {
+      padding: 0 10px;
+
+      .about-image {
+        img {
+          width: 100%;
+        }
+      }
+
+      .about-text {
+        width: 100%;
+        margin-left: 30px;
+      }
+
+      .about-advantages {
+        width: 100%;
+      }
+    }
+  }
+
+  .reviews {
+    .container {
+      padding-left: 10px;
+      padding-right: 10px;
+
+      .reviews-carousel {
+        max-width: 1000px;
+        justify-content: center;
+        margin: 0 auto;
+
+        .review-item {
+          width: 300px;
+          height: 320px;
+
+          .review-item-text {
+            padding-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1200px) {
+  .main {
+    margin-bottom: 80px;
+
+    .container {
+      .banner-carousel {
+        .banner-carousel-button {
+          bottom: 50px;
+        }
+
+        .banner-text {
+          top: 56px;
+          width: 470px;
+
+          .banner-text-title {
+            font-size: 40px;
+            line-height: 50px;
+          }
+
+          .banner-text-small {
+            font-size: 20px;
+          }
+        }
+
+        .banner-text-first {
+          top: 80px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1144px) {
+  .contacts {
+    padding: 0 10px;
+
+    .container {
+      .map iframe {
+        width: 500px;
+      }
+    }
+  }
+
+  .reviews {
+    .container {
+      .reviews-carousel {
+        max-width: 800px;
+
+        .review-item {
+          width: 250px;
+          height: 380px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1040px) {
+  .contacts {
+    .container {
+      .map iframe {
+        width: 400px;
+      }
+
+      .contacts-list {
+
+        .contacts-list-title {
+          font-size: 34px;
+        }
+
+        .contacts-list-item {
+          .contacts-list-item-text {
+            max-width: 400px;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 960px) {
+  .main {
+    .container {
+      .banner-carousel {
+        .banner-carousel-button {
+          bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .popular-articles {
+    .container {
+      .popular-article-cards {
+        grid-template-columns: repeat(2, 291px);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 35px;
+        row-gap: 45px;
+
+        article-card:last-child {
+          display: block;
+        }
+      }
+
+      .popular-articles-button {
+        right: 10px;
+      }
+    }
+  }
+
+  .about {
+    .container {
+
+      .about-image {
+        display: none;
+      }
+
+      .about-description {
+        width: 100% !important;
+      }
+    }
+  }
+
+  .reviews {
+    .container {
+      .reviews-carousel {
+        max-width: 650px;
+
+        .review-item {
+          width: 300px;
+          height: 380px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 840px) {
+  .about {
+    .container {
+      .about-text {
+        margin-left: 0;
+      }
+    }
+  }
+
+  .contacts {
+    .container {
+      flex-direction: column-reverse;
+
+      .map iframe {
+        width: 100%;
+      }
+
+      .contacts-list {
+        .contacts-list-item {
+          .contacts-list-item-text {
+            max-width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 760px) {
+  .services {
+    .container {
+      .services-header {
+        font-size: 32px;
+      }
+
+      .services-cards {
+        column-gap: 30px;
+      }
+    }
+  }
+
+  .reviews {
+    .container {
+      .reviews-carousel {
+        max-width: 470px;
+
+        .review-item {
+          width: 450px;
+          height: 250px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 640px) {
+  .popular-articles {
+    .container {
+      .popular-articles-header {
+        font-size: 32px;
+      }
+
+      .popular-article-cards {
+        grid-template-columns: repeat(1, 291px);
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 45px;
+
+        article-card:last-child {
+          display: block;
+        }
+      }
+
+      .popular-articles-button {
+        right: 10px;
+      }
+    }
+  }
+
+  .services {
+    .container {
+      .services-cards {
+        grid-template-columns: repeat(1, 291px);
+        grid-template-rows: repeat(4, 1fr);
+        row-gap: 70px;
+      }
+    }
+  }
+
+  .about {
+    .container {
+      margin: 0;
+
+      .about-text {
+        .about-advantages {
+          .about-advantages-items {
+            grid-template-columns: repeat(1, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            grid-template-areas:
+              "advantage-1"
+              "advantage-2"
+              "advantage-3"
+              "advantage-4";
+
+            .about-advantages-item {
+              .about-advantages-item-description {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 560px) {
+  .main {
+    .container {
+      .banner-carousel {
+        .banner-text {
+          top: 26px;
+          width: 300px;
+
+          .banner-text-title {
+            font-size: 32px;
+            line-height: 50px;
+          }
+
+          .banner-text-small {
+            font-size: 18px;
+            width: 280px;
+          }
+        }
+
+        .banner-text-first {
+          top: 30px;
+        }
+
+        .banner-carousel-button {
+          bottom: 20px;
+          width: 130px;
+        }
+      }
+    }
+  }
+
+  .reviews {
+    .container {
+      .reviews-title {
+        font-size: 30px;
+      }
+
+      .reviews-carousel {
+        max-width: 300px;
+
+        .review-item {
+          width: 290px;
+          height: 320px;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .main {
+    .container {
+      .banner-carousel {
+        .banner-text {
+          left: 45px;
+          width: 260px;
+
+          .banner-text-title {
+            font-size: 28px;
+          }
+
+          .banner-text-small {
+            font-size: 18px;
+            width: 260px;
+          }
+        }
+
+        .banner-carousel-button {
+          left: 45px;
+        }
+      }
+    }
+  }
+
+  .reviews {
+    .container {
+      .reviews-title {
+        font-size: 28px;
+      }
+
+      .reviews-carousel {
+        max-width: 250px;
+
+        .review-item {
+          width: 250px;
+          height: 340px;
+        }
+
+        .reviews-carousel-arrows {
+          a {
+
+            &.move-backward {
+              left: -21px;
+            }
+
+            &.move-forward {
+              right: -21px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
