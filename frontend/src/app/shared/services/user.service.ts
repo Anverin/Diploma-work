@@ -13,6 +13,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   getUserInfo(accessToken: string): Observable<UserType | DefaultResponseType> {
-      return this.http.get<UserType | DefaultResponseType>(environment.userInfoPath, {headers: new HttpHeaders({'x-auth': accessToken})});
+      return this.http.get<UserType | DefaultResponseType>(environment.userDataPath, {headers: new HttpHeaders({'x-auth': accessToken})});
        }
 }

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   api: "http://localhost:3000/api/",
   serverStaticPath: "http://localhost:3000/images/",
-  userInfoPath: "http://localhost:3000/api/users"
+  userDataPath: "http://localhost:3000/api/users"
 };
 
 /*
