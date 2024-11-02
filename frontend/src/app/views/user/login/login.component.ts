@@ -6,6 +6,7 @@ import {DefaultResponseType} from "../../../../types/default-response.type";
 import {HttpErrorResponse} from "@angular/common/http";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {Router} from "@angular/router";
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -34,11 +35,15 @@ export class LoginComponent {
   constructor(private fb: FormBuilder,
               private authService: AuthService,
               private _snackBar: MatSnackBar,
-              private router: Router) {
+              private router: Router,
+              private location: Location) {
   }
 
-  login(): void {
-    if (this.loginForm.valid && this.loginForm.value.email && this.loginForm.value.password) {
+  login()
+    :
+    void {
+    if (this.loginForm.valid && this.loginForm.value.email && this.loginForm.value.password
+    ) {
       this.authService.login(this.loginForm.value.email, this.loginForm.value.password, !!this.loginForm.value.rememberMe)
         .subscribe({
           next: (data: LoginResponseType | DefaultResponseType) => {
@@ -62,7 +67,8 @@ export class LoginComponent {
             this.authService.userId = loginResponse.userId;
 
             this._snackBar.open('Вы успешно авторизовались');
-            this.router.navigate(['/']).then();
+            // this.router.navigate(['/']).then();
+            this.location.back(); //перевод на предыдущую страницу, а не на главную, при авторизации
 
           },
           error: (errorResponse: HttpErrorResponse) => {

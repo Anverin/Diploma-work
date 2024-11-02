@@ -67,6 +67,19 @@ html, body {
   &:hover {
     color: $blue-text-color;
   }
+
+  & a {
+    text-decoration: none;
+    color: $base-text-color;
+
+    &:hover {
+      color: $blue-text-color;
+    }
+
+    &.header-content-phone {
+      color: $blue-text-color;
+    }
+  }
 }
 
 .mat-dialog-container {
@@ -95,13 +108,28 @@ html, body {
     }
 
     &:hover span {
-      //background: #B9D5FD;
-      //border-color: #B9D5FD;
       background: $blue-text-color;
       border-color: $blue-text-color;
     }
   }
 }
+
+
+
+//для адаптивного меню
+@media screen and (max-width: 786px) {
+  //чтобы телефон в выпадающем меню был не виден, пока он виден рядом
+  .mat-menu-item:nth-child(6) {
+    display: none;
+  }
+}
+@media screen and (max-width: 510px) {
+  .mat-menu-item:nth-child(6)  {
+    display: block;
+  }
+}
+
+
 
 
 //для обрезания описаний статей
@@ -127,6 +155,7 @@ html, body {
 }
 
 
+
 //стили для текста статей
 .detail-body-inner-text {
   h1 {
@@ -149,7 +178,6 @@ html, body {
 
   ul {
     padding-inline-start: 20px;
-
     li {
       font-size: 14px;
       color: $base-text-color;
@@ -163,39 +191,20 @@ html, body {
         left: -15px;
         top: -5px;
       }
-    }
-  }
+    }}
 
   ol {
     padding-inline-start: 20px;
-
     li {
       font-size: 14px;
       color: $base-text-color;
-    }
-  }
+    }}
 }
 
 @media screen and (max-width: 700px) {
   .detail-body-inner-text {
     h3 {
       word-break: break-all;
-    }
-  }
-}
-
-
-//первая карусель
-@media screen and (max-width: 840px) {
-  .owl-carousel {
-    .owl-item {
-      background: #B9D5FD;
-      width: 100%;
-      height: 350px;
-
-      img {
-        display: none;
-      }
     }
   }
 }
