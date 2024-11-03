@@ -18,7 +18,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {NgxMaskModule} from "ngx-mask";
 import {AuthInterceptor} from "./core/auth/auth.interceptor";
 
-import {APP_BASE_HREF} from '@angular/common';
+// import {APP_BASE_HREF} from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -45,7 +45,7 @@ import {APP_BASE_HREF} from '@angular/common';
   providers: [
     {provide: MAT_SNACK_BAR_DEFAULT_OPTIONS, useValue: {duration: 3000}},
     {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true},
-    {provide: APP_BASE_HREF, useValue: '/frontend/src/app'}
+    // {provide: APP_BASE_HREF, useValue: '/frontend/src/app'}
   ],
   bootstrap: [AppComponent]
 })
