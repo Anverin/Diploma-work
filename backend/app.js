@@ -54,7 +54,7 @@ MongoDBConnection.getConnection((error, connection) => {
 
     app.use(passport.initialize());
 
-    app.get ( '/' , ( req, res ) => {   res. send ( ' Hello World' ) });
+    // app.get ( '/' , ( req, res ) => {   res. send ( ' Hello World' ) });
     console.log('1111');
 
     app.use("/api", authRoutes);
