@@ -54,6 +54,8 @@ MongoDBConnection.getConnection((error, connection) => {
 
     app.use(passport.initialize());
 
+    app.get ( '/' , ( req, res ) => {   res. send ( ' Hello World' ) });
+
     app.use("/api", authRoutes);
     app.use("/api/categories", categoryRoutes);
     app.use("/api/articles", articleRoutes);
@@ -74,5 +76,7 @@ MongoDBConnection.getConnection((error, connection) => {
     app.listen(config.port, () =>
         console.log(`Server started`)
     );
+
+
 })
 
