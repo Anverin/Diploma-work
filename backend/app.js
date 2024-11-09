@@ -54,30 +54,25 @@ MongoDBConnection.getConnection((error, connection) => {
 
     app.use(passport.initialize());
 
-    app.get ( '/' , ( req, res ) => {   res. send ( ' Hello World' ) });
-    console.log('1111');
+    app.use("/api", authRoutes);
+    app.use("/api/categories", categoryRoutes);
+    app.use("/api/articles", articleRoutes);
+    app.use("/api/requests", requestRoutes);
+    app.use("/api/comments", commentRoutes);
+    app.use("/api/users", userRoutes);
 
-    // app.use("/api", authRoutes);
-    // app.use("/api/categories", categoryRoutes);
-    // app.use("/api/articles", articleRoutes);
-    // app.use("/api/requests", requestRoutes);
-    // app.use("/api/comments", commentRoutes);
-    // app.use("/api/users", userRoutes);
-    //
-    // app.use(function (req, res, next) {
-    //     const err = new Error('Not Found');
-    //     err.status = 404;
-    //     next(err);
-    // });
-    //
-    // app.use(function (err, req, res, next) {
-    //     res.status(err.statusCode || err.status || 452).send({error: true, message: err.message});
-    // });
+    app.use(function (req, res, next) {
+        const err = new Error('Not Found');
+        err.status = 404;
+        next(err);
+    });
+
+    app.use(function (err, req, res, next) {
+        res.status(err.statusCode || err.status || 500).send({error: true, message: err.message});
+    });
 
     app.listen(config.port, () =>
         console.log(`Server started`)
     );
-
-
 })
 
