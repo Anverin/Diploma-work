@@ -55,6 +55,7 @@ MongoDBConnection.getConnection((error, connection) => {
     app.use(passport.initialize());
 
     app.get ( '/' , ( req, res ) => {   res. send ( ' Hello World' ) });
+    console.log('1111');
 
     app.use("/api", authRoutes);
     app.use("/api/categories", categoryRoutes);
@@ -70,7 +71,7 @@ MongoDBConnection.getConnection((error, connection) => {
     });
 
     app.use(function (err, req, res, next) {
-        res.status(err.statusCode || err.status || 500).send({error: true, message: err.message});
+        res.status(err.statusCode || err.status || 452).send({error: true, message: err.message});
     });
 
     app.listen(config.port, () =>
